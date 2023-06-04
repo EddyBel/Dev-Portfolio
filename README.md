@@ -1,3 +1,3 @@
-<h1> Web Portfolio </h1>
+<h1> Web Portfolio Documentation</h1>
 
 Website showing a programming portfolio

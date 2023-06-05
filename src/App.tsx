@@ -1,7 +1,11 @@
+import { NavBar } from './components/layouts/index';
+import { ButtonScrollTop } from './components/commons/index';
+
 function App() {
   return (
-    <main>
-      <h1>Hello World In development</h1>
+    <main className="App">
+      <NavBar />
+      <ButtonScrollTop />
     </main>
   );
 }

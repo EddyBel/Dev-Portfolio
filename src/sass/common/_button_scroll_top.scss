@@ -1,0 +1,16 @@
+.button__scroll__top {
+  @include size(3.5rem, 3.5rem);
+  @include flex(row, center, center, 0px nowrap);
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 12px;
+  background: $black;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: translateY(-0.3rem);
+  }
+}

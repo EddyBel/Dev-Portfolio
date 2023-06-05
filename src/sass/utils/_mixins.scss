@@ -1,0 +1,33 @@
+// This file is responsible for storing functions or mixins that facilitate some operations avoiding writing more code than necessary.
+
+/*
+This mixin will be in charge of assigning the sizes of an object by adding a line to it.
+@param width - Element width
+@param height - Element height
+*/
+@mixin size($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+/*
+This mixin takes care of adding all the flex style to an element by making a call.
+@param flex-direction - Indicates the direction in which the flex elements will be aligned.
+@param justify-content - Indicates which spacing of the elements is followed by the spacing of the elements
+@param align-items - Indicates the alignment spacing that flex elements will follow.
+@param flex-wrap - Indicates whether the content should be self-adjusting
+*/
+@mixin flex(
+  $flex-direction: row,
+  $justify-content: flex-start,
+  $align-items: flex-start,
+  $flex-gap: 0px,
+  $flex-wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $flex-gap;
+  flex-wrap: $flex-wrap;
+}

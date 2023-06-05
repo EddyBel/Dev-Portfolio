@@ -1,0 +1,58 @@
+.navbar {
+  @include flex(row, space-between, center, 0px, nowrap);
+  padding: 5px;
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+
+  .navbar__container__title {
+    @include flex(row, center, center, 5px, nowrap);
+
+    .navbar__title {
+      font-size: 1.4rem;
+    }
+
+    .navbar__logo {
+      @include size(3rem, 3rem);
+      border-radius: 50%;
+    }
+  }
+
+  .navbar__container__menus {
+    @include flex(row, center, center, 0.7rem, nowrap);
+
+    li > .navbar__option {
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+  }
+
+  .navbar__container__buttons {
+    @include flex(row, center, center, 10px, nowrap);
+  }
+}
+
+.navbar__button_shadow,
+.navbar__button__rounded {
+  border: 1px solid rgba($color: #000000, $alpha: 0.7);
+  border-radius: 0.8rem;
+  padding: 0.5rem;
+  width: 6rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.navbar__button__rounded {
+  background: #000000;
+  color: #fefefe;
+}
+
+.navbar__button_shadow:hover {
+  background: $black;
+  color: $white;
+}
+
+.navbar__button__rounded:hover {
+  background: transparent;
+  color: $black;
+}

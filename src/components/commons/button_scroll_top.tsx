@@ -1,6 +1,8 @@
 export function ButtonScrollTop() {
+  const scrollTopMove = () => window.scrollTo(0, 0);
+
   return (
-    <button className="button__scroll__top">
+    <button className="button__scroll__top" onClick={scrollTopMove}>
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
         <g>
           <g fill="none" stroke="#EAECEE" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">

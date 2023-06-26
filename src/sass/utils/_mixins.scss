@@ -31,3 +31,30 @@ This mixin takes care of adding all the flex style to an element by making a cal
   gap: $flex-gap;
   flex-wrap: $flex-wrap;
 }
+
+/*
+ This mixin defines the size that corresponds to each window to avoid continuously assigning sizes.
+ @param display-screen - Indicates the window that will have the styles
+ */
+
+$breakpoints: (
+  tablet: 768px,
+  mini-tablet: 480px,
+  phone: 480px,
+  mini-phone: 320px,
+  laptop: 1024px,
+  desktop: 1280px,
+  ultra-wide: 1920px,
+);
+
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $width: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: $width) {
+      @content;
+    }
+  } @else {
+    @error "El breakpoint '#{$breakpoint}' no está definido en el mapa de breakpoints.";
+  }
+}

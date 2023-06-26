@@ -1,0 +1,23 @@
+/* This animation shows an element being born from the bottom */
+@keyframes DisplaysElementFromTheBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* Animation where the element appears with a transparent opacity and scaled up to its normal shape. */
+@keyframes SampleWithHighScaleAndTransparency {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

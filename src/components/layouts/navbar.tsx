@@ -1,41 +1,27 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { PATHS } from '../../web.config';
+
 export function NavBar() {
+  const [gliderClass, setGliderClass] = useState('hidden');
+
+  const moveGlider = (value: any) => {
+    const focusElement: string = value.target.innerHTML;
+    setGliderClass(focusElement.toLowerCase());
+  };
+
   return (
     <nav className="navbar">
-      <div className="navbar__container__title">
-        <img className="navbar__logo" src="logo.jpeg" alt="LOGO IMG" />
-        <h1 className="navbar__title">EddyBel</h1>
-      </div>
       <ul className="navbar__container__menus">
-        <li>
-          <a className="navbar__option" href="#">
-            Home
-          </a>
-        </li>
-        <li>
-          <a className="navbar__option" href="#">
-            About
-          </a>
-        </li>
-        <li>
-          <a className="navbar__option" href="#">
-            Works
-          </a>
-        </li>
-        <li>
-          <a className="navbar__option" href="#">
-            Capabilities
-          </a>
-        </li>
-        <li>
-          <a className="navbar__option" href="#">
-            Contact
-          </a>
-        </li>
+        <li className={`navbar__glider ${gliderClass}`}></li>
+        {Object.keys(PATHS).map((key) => (
+          <li className={`navbar__item ${key.toLowerCase()}`} key={`option-${key}`}>
+            <Link to={PATHS[key]} className="navbar__item__link" onClick={moveGlider}>
+              {key}
+            </Link>
+          </li>
+        ))}
       </ul>
-      <div className="navbar__container__buttons">
-        <button className="navbar__button_shadow">Blog</button>
-        <button className="navbar__button__rounded">Notes</button>
-      </div>
     </nav>
   );
 }

@@ -7,16 +7,53 @@
     min-height: 100vh;
     @include flex(column, center, center, 10px);
 
+    @include responsive(mini-phone) {
+      padding-top: 3rem;
+    }
+
+    @include responsive(phone) {
+      padding-top: 8rem;
+    }
+
     .index__main__gretting {
       widows: 100%;
       font-size: 1rem;
       font-family: $font-Source-Doce-Pro;
+      animation: DisplaysElementFromTheBottom 500ms normal forwards;
+      animation-delay: 200ms;
+      opacity: 0;
+      transform: translateY(50%);
     }
 
     .index__main__stack {
+      text-align: center;
       font-size: 9rem;
       font-family: $font-Fjalla-One;
       text-transform: uppercase;
+      animation: DisplaysElementFromTheBottom 500ms normal forwards;
+      animation-delay: 350ms;
+      opacity: 0;
+      transform: translateY(50%);
+
+      @include responsive(mini-phone) {
+        font-size: 3rem !important;
+      }
+
+      @include responsive(phone) {
+        font-size: 3rem !important;
+      }
+
+      @include responsive(mini-tablet) {
+        font-size: 4rem !important;
+      }
+
+      @include responsive(tablet) {
+        font-size: 5rem !important;
+      }
+
+      @include responsive(laptop) {
+        font-size: 9rem !important;
+      }
     }
 
     .index__main__img_front {
@@ -29,8 +66,24 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      // background-image: url('https://th.bing.com/th/id/R.cbb051e641fdd0d11ce15c03851895ff?rik=tAdN7xjUklkUhw&riu=http%3a%2f%2fwww.i-habitaciones.com%2fImagenes%2fhabitaciones-de-estilo-minimalista.jpg&ehk=WyXeykf1YOFzvbkDAX6Pdh2m8GWgymcw4OtoRvX4OkU%3d&risl=&pid=ImgRaw&r=0');
-      background-image: url('https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      background-image: url('assets/laptop (4).jpg');
+      z-index: 10;
+      animation: SampleWithHighScaleAndTransparency 500ms normal forwards;
+
+      @include responsive(mini-phone) {
+        width: 95%;
+        min-height: 300px;
+      }
+
+      @include responsive(mini-tablet) {
+        width: 95%;
+        min-height: 400px;
+      }
+
+      @include responsive(tablet) {
+        width: 85%;
+        min-height: 550px;
+      }
 
       .index__main__img__front__data {
         position: absolute;
@@ -39,7 +92,7 @@
         padding: 1.3rem;
 
         .index__main__img__front__data__label {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           color: rgba($color: #fdfefe, $alpha: 0.8);
           font-family: $font-Geologica;
         }
@@ -48,8 +101,243 @@
           font-size: 5rem;
           color: rgba($color: #fdfefe, $alpha: 1);
           font-family: $font-Geologica;
+          margin-left: 16px;
         }
       }
     }
   }
+
+  .index__experience {
+    padding: 100px;
+    padding-top: 300px;
+
+    @include responsive(mini-phone) {
+      padding: 20px;
+      padding-top: 100px;
+    }
+
+    @include responsive(mini-tablet) {
+      padding: 20px;
+      padding-top: 100px;
+    }
+
+    @include responsive(laptop) {
+      padding: 100px;
+      padding-top: 300px;
+    }
+
+    .index__experience__title {
+      font-size: 4rem;
+      font-family: $font-Fjalla-One;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(50%);
+      transition: opacity 800ms, transform 800ms;
+
+      &.visible {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+
+      @include responsive(mini-phone) {
+        font-size: 2rem;
+      }
+
+      @include responsive(mini-tablet) {
+        font-size: 3rem;
+      }
+
+      @include responsive(tablet) {
+        font-size: 3rem;
+      }
+
+      @include responsive(laptop) {
+        font-size: 4rem;
+      }
+    }
+
+    & > p {
+      font-family: $font-Roboto;
+      font-size: 1.6rem;
+      color: rgba($color: #000000, $alpha: 0.7);
+      opacity: 0;
+      transform: translateY(50%);
+      transition: opacity 800ms, transform 800ms;
+
+      &.visible {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+
+      @include responsive(mini-phone) {
+        font-size: 0.7rem;
+      }
+
+      @include responsive(mini-tablet) {
+        font-size: 1rem;
+      }
+
+      @include responsive(tablet) {
+        font-size: 1.4rem;
+      }
+
+      @include responsive(laptop) {
+        font-size: 1.6rem;
+      }
+    }
+
+    .index__experience__paragraphs {
+      padding: 20px;
+      @include flex(column, flex-start, flex-start, 15px);
+
+      & > p {
+        font-family: $font-Roboto;
+        font-size: 1.3rem;
+        color: rgba($color: #000000, $alpha: 0.6);
+        opacity: 0;
+        transform: translateY(50%);
+        transition: opacity 800ms, transform 800ms;
+
+        &.visible {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+
+        @include responsive(mini-phone) {
+          font-size: 0.7rem;
+        }
+
+        @include responsive(mini-tablet) {
+          font-size: 1rem;
+        }
+
+        @include responsive(tablet) {
+          font-size: 1.2rem;
+        }
+
+        @include responsive(laptop) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+/* Special styles for texts */
+
+.text {
+  text-transform: uppercase;
+  font-family: $font-Fjalla-One;
+}
+
+.text.full-stack {
+  color: rgba($color: #cd5c5c, $alpha: 0.8);
+}
+
+.text.excel-macros {
+  color: rgba($color: #1d8348, $alpha: 0.7);
+}
+
+.text.web-development {
+  color: rgba($color: #16a085, $alpha: 0.7);
+}
+
+.text.web-application {
+  color: rgba($color: #a569bd, $alpha: 0.7);
+}
+
+.text.management-system {
+  color: rgba($color: #27ae60, $alpha: 0.7);
+}
+
+.text.freelance {
+  color: rgba($color: #a569bd, $alpha: 0.7);
+}
+
+.text.front-end {
+  color: rgba($color: #f08080, $alpha: 0.7);
+}
+
+.text.back-end {
+  color: rgba($color: #4a235a, $alpha: 0.7);
+}
+
+.text.html {
+  color: rgba($color: #922b21, $alpha: 0.7);
+}
+
+.text.css {
+  color: rgba($color: #21618c, $alpha: 0.7);
+}
+
+.text.typescript {
+  color: rgba($color: #5dade2, $alpha: 0.7);
+}
+
+.text.javascript {
+  color: rgba($color: #f1c40f, $alpha: 0.7);
+}
+
+.text.react {
+  color: rgba($color: #5dade2, $alpha: 0.7);
+}
+
+.text.angular {
+  color: rgba($color: #e74c3c, $alpha: 0.7);
+}
+
+.text.vue {
+  color: rgba($color: #17a589, $alpha: 0.7);
+}
+
+.text.java {
+  color: rgba($color: #641e16, $alpha: 0.7);
+}
+
+.text.php {
+  color: rgba($color: #17202a, $alpha: 0.7);
+}
+
+.text.python {
+  color: rgba($color: #1b4f72, $alpha: 0.7);
+}
+
+.text.laravel {
+  color: rgba($color: #922b21, $alpha: 0.7);
+}
+
+.text.flask {
+  color: rgba($color: #1b4f72, $alpha: 0.7);
+}
+
+.text.django {
+  color: rgba($color: #16a085, $alpha: 0.7);
+}
+
+.text.node {
+  color: rgba($color: #1d8348, $alpha: 0.7);
+}
+
+.text.spring-boot {
+  color: rgba($color: #4a235a, $alpha: 0.7);
+}
+
+.text.developer {
+  color: rgba($color: #17202a, $alpha: 0.7);
+}
+
+.text.sql {
+  color: rgba($color: #17202a, $alpha: 0.7);
+}
+
+.text.mongo {
+  color: rgba($color: #1d8348, $alpha: 0.7);
+}
+
+.text.mysql {
+  color: rgba($color: #16a085, $alpha: 0.7);
+}
+
+.text.firebase {
+  color: rgba($color: #cd5c5c, $alpha: 0.8);
 }

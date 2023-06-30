@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import { PiGithubLogoFill } from 'react-icons/pi';
 import { PiGithubLogoBold } from 'react-icons/pi';
 import { GrLinkNext } from 'react-icons/gr';
-import { TechnologyIcon, InfiniteTextSlider } from '../components/commons/index';
+import { TechnologyIcon } from '../components/commons/index';
 
 const cards = [
   {
@@ -110,12 +111,12 @@ export function Works() {
             <h1>Would you like to know more about our projects?</h1>
             <p>Visit my github or the repository section if you want to see other projects</p>
             <div className="works__data__more__container__buttons">
-              <a className="works__button__github">
+              <a href="https://github.com/EddyBel" className="works__button__github">
                 <PiGithubLogoBold className="works__more__github" /> Github
               </a>
-              <a className="works__button__link">
+              <Link to="/repositories" className="works__button__link">
                 More Works <GrLinkNext className="works__more__link-arrow" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

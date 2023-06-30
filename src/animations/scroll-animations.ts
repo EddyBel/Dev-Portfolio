@@ -66,6 +66,18 @@ function AnimationTextExperience(currentLocation: string) {
   });
 }
 
+// ---------------------------- ANIMATIONS TO BE USED FOR THE HOME SECTION ------------------------------------
+
+// const cards = document.querySelectorAll('.card__github');
+
+function AnimationCardsOfRepos() {
+  const cards = document.querySelectorAll('.card__github');
+  cards.forEach((element) => {
+    if (element.getBoundingClientRect().top < distance) element.classList.remove('hidden');
+    else element.classList.add('hidden');
+  });
+}
+
 // ---------------------------- ANIMATIONS TO BE USED FOR THE WORKS SECTION ------------------------------------
 
 function AnimationWorksCards() {
@@ -77,7 +89,6 @@ function AnimationWorksCards() {
 /** This function contains all the animations that will be executed in the scroll event. */
 function ScrollFunctions() {
   AnimationScrollTopButton();
-  AnimationWatchNavBar();
   AnimationChangeTransparentNavBar();
 
   /** Extracts the current web path */
@@ -86,6 +97,8 @@ function ScrollFunctions() {
   // Validate that you are on the HOME or "/" page to run your animations.
   if (currentLocation == '/') {
     AnimationTextExperience(currentLocation);
+  } else if (currentLocation == '/repositories') {
+    AnimationCardsOfRepos();
   }
 
   /** Update the web route */

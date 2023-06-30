@@ -10,7 +10,7 @@
     @include flex(row, center, center, 15px, wrap);
     padding: 20px;
     background: rgba($color: $black, $alpha: 0.5);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(39px);
     border-radius: 30px;
     margin-top: 20px;
     opacity: 1;
@@ -37,12 +37,6 @@
 
         &.repositories {
           ~ .navbar__item.repositories {
-            color: $white;
-          }
-        }
-
-        &.notes {
-          ~ .navbar__item.notes {
             color: $white;
           }
         }
@@ -130,25 +124,6 @@
         }
       }
 
-      &.notes {
-        opacity: 1;
-        width: 60px;
-        transform: translateY(50%) translateX(415%);
-
-        @include responsive(mini-phone) {
-          height: 25px;
-          width: 47px;
-          transform: translateY(54%) translateX(407%);
-        }
-
-        @include responsive(phone) {
-          height: 30px;
-          width: 60px;
-
-          transform: translateY(50%) translateX(415%);
-        }
-      }
-
       &.contact {
         opacity: 1;
         width: 72px;
@@ -157,14 +132,14 @@
         @include responsive(mini-phone) {
           height: 25px;
           width: 50px;
-          transform: translateY(54%) translateX(485%);
+          transform: translateY(54%) translateX(390%);
         }
 
         @include responsive(phone) {
           height: 30px;
           width: 72px;
 
-          transform: translateY(50%) translateX(433%);
+          transform: translateY(50%) translateX(348%);
         }
       }
     }

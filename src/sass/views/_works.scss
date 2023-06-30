@@ -4,6 +4,12 @@
   padding-bottom: 200px;
   overflow: hidden;
 
+  @include responsive(mini-phone) {
+    padding: 10px;
+    padding-top: 150px;
+    padding-bottom: 200px;
+  }
+
   .works__title {
     font-family: $font-Fjalla-One;
     font-size: 5rem;
@@ -14,6 +20,18 @@
     opacity: 0;
     margin-bottom: 20px;
     text-transform: uppercase;
+
+    @include responsive(mini-phone) {
+      font-size: 2rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 3rem;
+    }
+
+    @include responsive(laptop) {
+      font-size: 5rem;
+    }
   }
 
   .works__description__page {
@@ -26,6 +44,18 @@
     animation: DisplaysElementFromTheBottom 900ms normal forwards;
     animation-delay: 300ms;
     opacity: 0;
+
+    @include responsive(mini-phone) {
+      font-size: 0.5rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 0.8rem;
+    }
+
+    @include responsive(laptop) {
+      font-size: 1rem;
+    }
   }
   .works__container__cards {
     padding: 20px;
@@ -35,6 +65,14 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 20px 10px;
     margin: auto;
+
+    @include responsive(mini-phone) {
+      grid-template-columns: 1fr;
+    }
+
+    @include responsive(mini-tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
   }
 
   .works__data {
@@ -56,6 +94,18 @@
         radial-gradient(at 39% 23%, hsla(26, 77%, 68%, 1) 0px, transparent 50%);
       overflow: hidden;
 
+      @include responsive(mini-phone) {
+        min-height: 100px;
+      }
+
+      @include responsive(mini-tablet) {
+        min-height: 200px;
+      }
+
+      @include responsive(laptop) {
+        min-height: 300px;
+      }
+
       .card__data__works__info {
         @include flex(row, center, center, 30px, wrap);
         position: absolute;
@@ -73,6 +123,18 @@
             font-family: $font-Fjalla-One;
             font-size: 3rem;
             color: $white;
+
+            @include responsive(mini-phone) {
+              font-size: 1rem;
+            }
+
+            @include responsive(mini-tablet) {
+              font-size: 1.5rem;
+            }
+
+            @include responsive(laptop) {
+              font-size: 3rem;
+            }
           }
         }
       }
@@ -80,7 +142,7 @@
   }
 
   .works__data__more__works {
-    @include flex(row, space-between, center, 10px, wrap);
+    @include flex(row, center, center, 25px, wrap);
     margin-top: 300px;
 
     .works__data__more__works__image {
@@ -101,12 +163,28 @@
         font-size: 3rem;
         font-family: $font-Fjalla-One;
         color: #27374d;
+
+        @include responsive(mini-phone) {
+          font-size: 1.4rem;
+        }
+
+        @include responsive(mini-tablet) {
+          font-size: 3rem;
+        }
       }
 
       & > p {
         font-size: 1.7rem;
         font-family: $font-Roboto;
         color: rgba($color: #000000, $alpha: 0.8);
+
+        @include responsive(mini-phone) {
+          font-size: 1rem;
+        }
+
+        @include responsive(mini-tablet) {
+          font-size: 1.7rem;
+        }
       }
 
       .works__data__more__container__buttons {

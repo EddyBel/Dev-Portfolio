@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { PATHS } from '../web.config';
 import { Index } from '../views/home';
 import { Works } from '../views/works';
+import { Repos } from '../views/repositories';
+import { Contact } from '../views/contact';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -20,9 +22,8 @@ export function Views() {
       <Switch>
         <Route path={PATHS.Home} element={<Index />} />
         <Route path={PATHS.Works} element={<Works />} />
-        <Route path={PATHS.Repositories} element={<Index />} />
-        <Route path={PATHS.Notes} element={<Index />} />
-        <Route path={PATHS.Contact} element={<Index />} />
+        <Route path={PATHS.Repositories} element={<Repos />} />
+        <Route path={PATHS.Contact} element={<Contact />} />
       </Switch>
       <ScrollToTop />
     </>
